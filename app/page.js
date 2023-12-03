@@ -5,8 +5,8 @@ import axios from 'axios'
 import Image from 'next/image'
 import { useState } from 'react'
 import {BsSearch} from 'react-icons/bs'
-// import Weather from './components/Weather';
-// import Spinner from './components/Spinner';
+import Weather from './components/Weather';
+import Spinner from './components/Spinner';
 
 export default function Home() {
   const [city, setCity] = useState('')
@@ -26,9 +26,9 @@ export default function Home() {
     setLoading(false)
   }
   
-  // if (loading) {
-  //   return <Spinner />
-  // } else {
+  if (loading) {
+    return <Spinner />
+  } else {
     return (
       <div>
         <head>
@@ -65,8 +65,8 @@ export default function Home() {
           </div>
 
       {/* Weather Info */}
-      {/* {weather.main && <Weather data={weather} />} */}
+      {weather.main && <Weather data={weather} />}
       </div>
     )
   }
-// }
+}
