@@ -32,7 +32,7 @@ export default function Home() {
     return (
       <div>
         <head>
-          <title>Weather App</title>
+          <title>Real Weather</title>
           <meta name="description" content="Weather App" />
           <link rel="icon" href="/favicon.ico" />
         </head>
