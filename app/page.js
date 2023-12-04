@@ -8,13 +8,17 @@ import {BsSearch} from 'react-icons/bs'
 import Weather from './components/Weather';
 import Spinner from './components/Spinner';
 
+//Main home component
 export default function Home() {
+  //State for managing city input, weather data, and loading status
   const [city, setCity] = useState('')
   const [weather, setWeather] = useState({})
   const [loading, setLoading] = useState(false)
 
+  //URL for fetching weather data. Uses environment variable for API key
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${process.env.NEXT_PUBLIC_WEATHER_KEY}`
 
+  //Function to fetch weather data with API call
   const fetchWeather = (e) => {
     e.preventDefault()
     setLoading(true)
@@ -26,8 +30,9 @@ export default function Home() {
     setLoading(false)
   }
   
+  //What to render based on loading status
   if (loading) {
-    return <Spinner />
+    return <Spinner /> //Loading spinner
   } else {
     return (
       <div>
@@ -36,11 +41,12 @@ export default function Home() {
           <meta name="description" content="Weather App" />
           <link rel="icon" href="/favicon.ico" />
         </head>
-        <div className='absolute top-0 left-0 right-0 bottom-0 bg-black/40 z-[-1]'/>
+      {/* Background image container */}
+      <div className='absolute top-0 left-0 right-0 bottom-0 bg-black/40 z-[-1]'/>
       <Image 
         src='https://images.unsplash.com/photo-1487621167305-5d248087c724?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' 
         layout='fill'
-        className='object-cover'
+      className='object-cover'
         alt='Weather App'
       />
 
@@ -64,7 +70,7 @@ export default function Home() {
             </form>
           </div>
 
-      {/* Weather Info */}
+      {/* Weather Info Display */}
       {weather.main && <Weather data={weather} />}
       </div>
     )
