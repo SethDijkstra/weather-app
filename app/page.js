@@ -29,6 +29,16 @@ export default function Home() {
     setCity('')
     setLoading(false)
   }
+
+  //Map weather conditions to background images
+  //Update with proper links to photos
+  const weatherBackgrounds = {
+    Clear: 'https://images.unsplash.com/photo-1555344158-7d1d971af150?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    Clouds: 'https://images.unsplash.com/photo-1530625243345-797b4c1836ee?q=80&w=1936&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    Rain: 'https://images.unsplash.com/photo-1437624155766-b64bf17eb2ce?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    Snow: 'https://images.unsplash.com/photo-1517430816045-df4b7de11d4d?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    Thunderstorm: 'https://images.unsplash.com/photo-1517430816045-df4b7de11d4d?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+  }
   
   //What to render based on loading status
   if (loading) {
@@ -44,7 +54,7 @@ export default function Home() {
       {/* Background image container */}
       <div className='absolute top-0 left-0 right-0 bottom-0 bg-black/40 z-[-1]'/>
       <Image 
-        src='https://images.unsplash.com/photo-1487621167305-5d248087c724?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' 
+        src='https://images.unsplash.com/photo-1530625243345-797b4c1836ee?q=80&w=1936&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' 
         layout='fill'
       className='object-cover'
         alt='Weather App'
